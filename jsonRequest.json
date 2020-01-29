@@ -1,0 +1,33 @@
+{
+	"lojas": [{
+		"id": "1",
+		"endereco": {
+			"complemento": "",
+			"bairro": "Bairro Camera",
+			"numero": "01",
+			"logradouro": "Rua de teste 01"
+		},
+		"nome": "Android Stduio",
+		"telefone": "(81) 3465-0787"
+	}, {
+		"id": "2",
+		"endereco": {
+			"complemento": "Bloco A",
+			"bairro": "Bairro Json",
+			"numero": "",
+			"logradouro": "Rua do Android"
+		},
+		"nome": "Eclipse ADT",
+		"telefone": "(81) 3356-4180"
+	}, {
+		"id": "3",
+		"endereco": {
+			"complemento": "Sala Kotlin",
+			"bairro": "Bairro Espresso",
+			"numero": "56",
+			"logradouro": "Av. iOS"
+		},
+		"nome": "Espresso 2.2",
+		"telefone": "(81) 3336-2565"
+	}]
+}
