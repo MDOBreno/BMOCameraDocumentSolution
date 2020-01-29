@@ -29,9 +29,10 @@
     lojas =[[NSMutableArray alloc] init];
     for (NSDictionary *item in dados) {
         NSString *nome = [item objectForKey:@"nome"];
+        NSString *id = [item objectForKey:@"id"];
         NSString *telefone = [item objectForKey:@"telefone"];
         
-        Loja *c = [[Loja alloc] initWithNome:nome andTelefone:telefone];
+        Loja *c = [[Loja alloc] initWithNome:nome  andIdentidade:id andTelefone:telefone];
         [lojas addObject:c];
         // [c release];
     }
