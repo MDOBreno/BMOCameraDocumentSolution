@@ -7,22 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Endereco.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Loja : NSObject {
     NSString *nome;
-    NSString *id;
+    NSString *identidade;
     NSString *telefone;
+    Endereco *endereco;
 }
 
 -(id) initWithNome:(NSString *) nomeInicial
-       andIdentidade:(NSString *) idInicial
-       andTelefone:(NSString *) telInicial;
+       andIdentidade:(NSString *) identidadeInicial
+       andTelefone:(NSString *) telInicial
+       andEndereco:(Endereco *) enderecoInicial;
 
 @property (nonatomic, retain) NSString *nome;
-@property (nonatomic, retain) NSString *id;
+@property (nonatomic, retain) NSString *identidade;
 @property (nonatomic, retain) NSString *telefone;
+@property (nonatomic, retain) Endereco *endereco;
 
 @end
 

@@ -9,14 +9,15 @@
 #import "Loja.h"
 
 @implementation Loja
-@synthesize nome,id,telefone;
+@synthesize nome,identidade,telefone,endereco;
 
--(id) initWithNome:(NSString *)nomeInicaial andIdentidade:(NSString *) idInicial andTelefone:(NSString *) telInicial{
+-(id) initWithNome:(NSString *)nomeInicaial andIdentidade:(NSString *) identidadeInicial andTelefone:(NSString *) telInicial andEndereco:(Endereco *) enderecoInicial{
     
     if(( self = [super init] )) {
         self.nome = nomeInicaial;
-        self.id = idInicial;
+        self.identidade = identidadeInicial;
         self.telefone = telInicial;
+        self.endereco = enderecoInicial;
     }
     
     return self;

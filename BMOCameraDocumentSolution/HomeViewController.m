@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "Loja.h"
+#import "Endereco.h"
 
 @interface HomeViewController ()
 
@@ -29,10 +30,17 @@
     lojas =[[NSMutableArray alloc] init];
     for (NSDictionary *item in dados) {
         NSString *nome = [item objectForKey:@"nome"];
-        NSString *id = [item objectForKey:@"id"];
+        NSString *identidade = [item objectForKey:@"id"];
         NSString *telefone = [item objectForKey:@"telefone"];
         
-        Loja *c = [[Loja alloc] initWithNome:nome  andIdentidade:id andTelefone:telefone];
+        NSDictionary *dicioEndereco = [item objectForKey:@"endereco"];
+        NSString *complemento = [dicioEndereco objectForKey:@"complemento"];
+        NSString *bairro = [dicioEndereco objectForKey:@"bairro"];
+        NSString *numero = [dicioEndereco objectForKey:@"numero"];
+        NSString *logradouro = [dicioEndereco objectForKey:@"logradouro"];
+        Endereco *endereco = [[Endereco alloc] initWithComplemento:complemento andBairro:bairro andNumero:numero andLogradouro:logradouro];
+        
+        Loja *c = [[Loja alloc] initWithNome:nome  andIdentidade:identidade andTelefone:telefone andEndereco:endereco];
         [lojas addObject:c];
         // [c release];
     }

@@ -7,26 +7,59 @@
 		<dict>
 			<key>nome</key>
 			<string>Android Stduio</string>
-			<key>id</key>
+			<key>identidade</key>
 			<string>1</string>
 			<key>telefone</key>
 			<string>(81) 3465-0787</string>
+			<key>endereco</key>
+			<dict>
+				<key>complemento</key>
+				<string></string>
+				<key>bairro</key>
+				<string>Bairro Camera</string>
+				<key>numero</key>
+				<string>01</string>
+				<key>logradouro</key>
+				<string>Rua de teste 01</string>
+			</dict>
 		</dict>
 		<dict>
 			<key>nome</key>
 			<string>Eclipse ADT</string>
-			<key>id</key>
+			<key>identidade</key>
 			<string>2</string>
 			<key>telefone</key>
 			<string>(81) 3356-4180</string>
+			<key>endereco</key>
+			<dict>
+				<key>complemento</key>
+				<string>Bloco A</string>
+				<key>bairro</key>
+				<string>Bairro Json</string>
+				<key>numero</key>
+				<string></string>
+				<key>logradouro</key>
+				<string>Rua do Android</string>
+			</dict>
 		</dict>
 		<dict>
 			<key>nome</key>
 			<string>Espresso 2.2</string>
-			<key>id</key>
+			<key>identidade</key>
 			<string>3</string>
 			<key>telefone</key>
 			<string>(81) 3336-2565</string>
+			<key>endereco</key>
+			<dict>
+				<key>complemento</key>
+				<string>Sala Kotlin</string>
+				<key>bairro</key>
+				<string>Bairro Espresso</string>
+				<key>numero</key>
+				<string>56</string>
+				<key>logradouro</key>
+				<string>Av. iOS</string>
+			</dict>
 		</dict>
 	</array>
 </dict>
