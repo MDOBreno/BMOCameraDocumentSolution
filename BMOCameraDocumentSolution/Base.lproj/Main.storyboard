@@ -54,7 +54,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="tabelaContatos" destination="wJ8-fJ-Yx6" id="biN-cB-Tub"/>
+                        <outlet property="tabelaLojas" destination="wJ8-fJ-Yx6" id="biN-cB-Tub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

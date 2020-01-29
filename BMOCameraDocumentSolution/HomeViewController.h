@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
-    NSMutableArray *contatos;
+    NSMutableArray *lojas;
 }
 
-@property (retain, nonatomic) IBOutlet UITableView *tabelaContatos;
+@property (retain, nonatomic) IBOutlet UITableView *tabelaLojas;
 
 @end
 

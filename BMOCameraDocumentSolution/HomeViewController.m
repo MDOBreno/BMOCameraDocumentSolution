@@ -7,7 +7,7 @@
 //
 
 #import "HomeViewController.h"
-#import "Contato.h"
+#import "Loja.h"
 
 @interface HomeViewController ()
 
@@ -22,17 +22,17 @@
 }
 
 -(void) loadContacts {
-    NSString *plistCaminho = [[NSBundle mainBundle] pathForResource:@"contatos" ofType:@"plist"];
+    NSString *plistCaminho = [[NSBundle mainBundle] pathForResource:@"lojas" ofType:@"plist"];
     NSDictionary *pl = [NSDictionary dictionaryWithContentsOfFile:plistCaminho];
-    NSArray *dados = [pl objectForKey:@"contatos"];
+    NSArray *dados = [pl objectForKey:@"lojas"];
     
-    contatos =[[NSMutableArray alloc] init];
+    lojas =[[NSMutableArray alloc] init];
     for (NSDictionary *item in dados) {
         NSString *nome = [item objectForKey:@"nome"];
         NSString *telefone = [item objectForKey:@"telefone"];
         
-        Contato *c = [[Contato alloc] initWithNome:nome andTelefone:telefone];
-        [contatos addObject:c];
+        Loja *c = [[Loja alloc] initWithNome:nome andTelefone:telefone];
+        [lojas addObject:c];
         // [c release];
     }
 }
@@ -40,20 +40,20 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return contatos.count;
+    return lojas.count;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    static NSString *CelulaContatoCacheID = @"CelulaContatoCacheID";
-    UITableViewCell *cell = [self.tabelaContatos dequeueReusableCellWithIdentifier:CelulaContatoCacheID];
+    static NSString *CelulaLojaCacheID = @"CelulaLojaCacheID";
+    UITableViewCell *cell = [self.tabelaLojas dequeueReusableCellWithIdentifier:CelulaLojaCacheID];
     
     if (!cell) {
-        cell = /* [ */[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle/*Default*//*Value1*//*Value2*/ reuseIdentifier:CelulaContatoCacheID] /* autorelease] */;
+        cell = /* [ */[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle/*Default*//*Value1*//*Value2*/ reuseIdentifier:CelulaLojaCacheID] /* autorelease] */;
     }
     
-    Contato *contato = [contatos objectAtIndex:indexPath.row];
-    cell.textLabel.text = contato.nome;
-    cell.detailTextLabel.text = contato.telefone;
+    Loja *loja = [lojas objectAtIndex:indexPath.row];
+    cell.textLabel.text = loja.nome;
+    cell.detailTextLabel.text = loja.telefone;
     
     return cell;
 }

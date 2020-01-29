@@ -1,14 +1,14 @@
 //
-//  Contato.m
+//  Loja.m
 //  BMOCameraDocumentSolution
 //
 //  Created by Breno Medeiros on 23/10/18.
 //  Copyright © 2018 Breno Medeiros. All rights reserved.
 //
 
-#import "Contato.h"
+#import "Loja.h"
 
-@implementation Contato
+@implementation Loja
 @synthesize nome,telefone;
 
 -(id) initWithNome:(NSString *)nomeInicaial andTelefone:(NSString *) telInicial{

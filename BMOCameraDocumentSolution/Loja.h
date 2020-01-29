@@ -1,5 +1,5 @@
 //
-//  Contato.h
+//  Loja.h
 //  BMOCameraDocumentSolution
 //
 //  Created by Breno Medeiros on 23/10/18.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Contato : NSObject {
+@interface Loja : NSObject {
     NSString *nome;
     NSString *telefone;
 }
