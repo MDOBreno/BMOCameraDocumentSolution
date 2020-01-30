@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "Loja.h"
 #import "Endereco.h"
+#import "DetalheLoja.h"
 
 @interface MainViewController ()
 
@@ -74,15 +75,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Loja *loja = [lojas objectAtIndex:indexPath.row];
-    NSString *msg = [NSString stringWithFormat:@"Nome: %@\nTelefone: %@", loja.nome, loja.telefone];
+    
+    [self showDetalheLoja:loja];
+    /*NSString *msg = [NSString stringWithFormat:@"Nome: %@\nTelefone: %@", loja.nome, loja.telefone];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Detalhes da Loja" message:msg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
+    [alert show];*/
     
     [self.tabelaLojas deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 -(void)tableView:(UITableView*)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath*)indexPath{
+    
     if (editingStyle == (NSInteger *)UITableViewCellEditingStyleDelete) {
         [lojas removeObjectAtIndex:indexPath.row];
         [self.tabelaLojas reloadData];
@@ -91,6 +95,16 @@
 
 -(NSString *) tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     return @"Remover";
+}
+
+
+-(void) showDetalheLoja:(Loja*)loja {
+    DetalheLoja *dl = [[DetalheLoja alloc] init];
+    
+    dl.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
+    [self presentModalViewController:dl animated:YES];
+    //[dl release];
 }
 
 /* - (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
