@@ -19,10 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self loadContacts];
+    [self loadLojas];
 }
 
--(void) loadContacts {
+-(void) loadLojas {
     NSString *plistCaminho = [[NSBundle mainBundle] pathForResource:@"lojas" ofType:@"plist"];
     NSDictionary *pl = [NSDictionary dictionaryWithContentsOfFile:plistCaminho];
     NSArray *dados = [pl objectForKey:@"lojas"];
@@ -30,7 +30,7 @@
     lojas =[[NSMutableArray alloc] init];
     for (NSDictionary *item in dados) {
         NSString *nome = [item objectForKey:@"nome"];
-        NSString *identidade = [item objectForKey:@"id"];
+        NSString *identidade = [item objectForKey:@"identidade"];
         NSString *telefone = [item objectForKey:@"telefone"];
         
         NSDictionary *dicioEndereco = [item objectForKey:@"endereco"];
@@ -57,17 +57,30 @@
     UITableViewCell *cell = [self.tabelaLojas dequeueReusableCellWithIdentifier:CelulaLojaCacheID];
     
     if (!cell) {
-        cell = /* [ */[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle/*Default*//*Value1*//*Value2*/ reuseIdentifier:CelulaLojaCacheID] /* autorelease] */;
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CelulaLojaCacheID];
     }
     
     Loja *loja = [lojas objectAtIndex:indexPath.row];
-    cell.textLabel.text = loja.nome;
-    cell.detailTextLabel.text = loja.telefone;
+    cell.textLabel.text = [NSString stringWithFormat:@"Loja com iD: %@", loja.identidade];
+    cell.detailTextLabel.text = loja.nome;
+    
+    UIImage *icone = [UIImage imageNamed:@"Icone Preenchido"];
+    cell.imageView.image = icone;
+    cell.imageView.layer.cornerRadius = icone.size.height / 4;
+    cell.imageView.layer.masksToBounds = YES;
     
     return cell;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Loja *loja = [lojas objectAtIndex:indexPath.row];
+    NSString *msg = [NSString stringWithFormat:@"Nome: %@\nTelefone: %@", loja.nome, loja.telefone];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Detalhes da Loja" message:msg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    
+    [self.tabelaLojas deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 
 /* - (void)encodeWithCoder:(nonnull NSCoder *)aCoder {

@@ -11,10 +11,10 @@
 @implementation Loja
 @synthesize nome,identidade,telefone,endereco;
 
--(id) initWithNome:(NSString *)nomeInicaial andIdentidade:(NSString *) identidadeInicial andTelefone:(NSString *) telInicial andEndereco:(Endereco *) enderecoInicial{
+-(id) initWithNome:(NSString *)nomeInicial andIdentidade:(NSString *) identidadeInicial andTelefone:(NSString *) telInicial andEndereco:(Endereco *) enderecoInicial{
     
     if(( self = [super init] )) {
-        self.nome = nomeInicaial;
+        self.nome = nomeInicial;
         self.identidade = identidadeInicial;
         self.telefone = telInicial;
         self.endereco = enderecoInicial;
@@ -25,7 +25,9 @@
 
 /* -(void) dealloc {
     [nome release];
+    [identidade release];
     [telefone release];
+    [endereco release];
     [super dealloc];
 } */
 

@@ -25,8 +25,10 @@
 }
 
 /* -(void) dealloc {
-    [nome release];
-    [telefone release];
+    [complemento release];
+    [bairro release];
+    [numero release];
+    [logradouro release];
     [super dealloc];
 } */
 

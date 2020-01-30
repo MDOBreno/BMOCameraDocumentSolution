@@ -410,7 +410,7 @@
 		33A3571723D69821008FD0C6 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		33A3571823D69821008FD0C6 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		33A3571923D69821008FD0C6 /* libParallelCompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libParallelCompression.tbd; path = usr/lib/libParallelCompression.tbd; sourceTree = SDKROOT; };
-		33C08FDC217EA7C100A73929 /* Breno - Camera DS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Breno - Camera DS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33C08FDC217EA7C100A73929 /* BMO - Camera DS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMO - Camera DS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C08FDF217EA7C100A73929 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		33C08FE0217EA7C100A73929 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		33C08FE2217EA7C100A73929 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -842,7 +842,7 @@
 		33C08FDD217EA7C100A73929 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				33C08FDC217EA7C100A73929 /* Breno - Camera DS.app */,
+				33C08FDC217EA7C100A73929 /* BMO - Camera DS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -885,7 +885,7 @@
 			);
 			name = BMO05TableViewSimpleContactList;
 			productName = BMO05TableViewSimpleContactList;
-			productReference = 33C08FDC217EA7C100A73929 /* Breno - Camera DS.app */;
+			productReference = 33C08FDC217EA7C100A73929 /* BMO - Camera DS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1100,7 +1100,7 @@
 				MARKETING_VERSION = 1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = CasaDoCodes.BMOCameraDocumentSolution;
-				PRODUCT_NAME = "Breno - Camera DS";
+				PRODUCT_NAME = "BMO - Camera DS";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
@@ -1125,7 +1125,7 @@
 				MARKETING_VERSION = 1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = CasaDoCodes.BMOCameraDocumentSolution;
-				PRODUCT_NAME = "Breno - Camera DS";
+				PRODUCT_NAME = "BMO - Camera DS";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
