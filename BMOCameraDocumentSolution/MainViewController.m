@@ -6,15 +6,15 @@
 //  Copyright © 2018 Breno Medeiros. All rights reserved.
 //
 
-#import "HomeViewController.h"
+#import "MainViewController.h"
 #import "Loja.h"
 #import "Endereco.h"
 
-@interface HomeViewController ()
+@interface MainViewController ()
 
 @end
 
-@implementation HomeViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -82,6 +82,16 @@
     [self.tabelaLojas deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+-(void)tableView:(UITableView*)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath*)indexPath{
+    if (editingStyle == (NSInteger *)UITableViewCellEditingStyleDelete) {
+        [lojas removeObjectAtIndex:indexPath.row];
+        [self.tabelaLojas reloadData];
+    }
+}
+
+-(NSString *) tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"Remover";
+}
 
 /* - (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
     <#code#>
