@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "33C08FDB217EA7C100A73929"
-               BuildableName = "Breno - Camera DS.app"
+               BuildableName = "BMO - Camera DS.app"
                BlueprintName = "BMO05TableViewSimpleContactList"
                ReferencedContainer = "container:BMOCameraDocumentSolution.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "33C08FDB217EA7C100A73929"
-            BuildableName = "Breno - Camera DS.app"
+            BuildableName = "BMO - Camera DS.app"
             BlueprintName = "BMO05TableViewSimpleContactList"
             ReferencedContainer = "container:BMOCameraDocumentSolution.xcodeproj">
          </BuildableReference>
@@ -63,7 +63,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "33C08FDB217EA7C100A73929"
-            BuildableName = "Breno - Camera DS.app"
+            BuildableName = "BMO - Camera DS.app"
             BlueprintName = "BMO05TableViewSimpleContactList"
             ReferencedContainer = "container:BMOCameraDocumentSolution.xcodeproj">
          </BuildableReference>
