@@ -11,6 +11,8 @@
 		3386D11723DC708900FB15EA /* lojas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3386D11623DC708900FB15EA /* lojas.plist */; };
 		338C746223E2EC7500B8F49F /* DetalheLoja.m in Sources */ = {isa = PBXBuildFile; fileRef = 338C746123E2EC7500B8F49F /* DetalheLoja.m */; };
 		338C746523E2EDAC00B8F49F /* DetalheLoja.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338C746423E2EDAC00B8F49F /* DetalheLoja.xib */; };
+		3390319F23E37E310095752F /* DetalheFoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3390319E23E37E310095752F /* DetalheFoto.m */; };
+		339031A223E37F4B0095752F /* DetalheFoto.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339031A123E37F4B0095752F /* DetalheFoto.xib */; };
 		33A3559223D6970A008FD0C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C08FE0217EA7C100A73929 /* AppDelegate.m */; };
 		33A3559323D6970E008FD0C6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C08FE3217EA7C100A73929 /* MainViewController.m */; };
 		33A3559423D69712008FD0C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C08FEE217EA7C500A73929 /* main.m */; };
@@ -27,6 +29,9 @@
 		338C746123E2EC7500B8F49F /* DetalheLoja.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetalheLoja.m; sourceTree = "<group>"; };
 		338C746323E2EC8F00B8F49F /* DetalheLoja.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetalheLoja.h; sourceTree = "<group>"; };
 		338C746423E2EDAC00B8F49F /* DetalheLoja.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetalheLoja.xib; sourceTree = "<group>"; };
+		3390319E23E37E310095752F /* DetalheFoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetalheFoto.m; sourceTree = "<group>"; };
+		339031A023E37E8A0095752F /* DetalheFoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetalheFoto.h; sourceTree = "<group>"; };
+		339031A123E37F4B0095752F /* DetalheFoto.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetalheFoto.xib; sourceTree = "<group>"; };
 		33A3559623D6980E008FD0C6 /* libomadm.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libomadm.tbd; path = usr/lib/libomadm.tbd; sourceTree = SDKROOT; };
 		33A3559723D6980E008FD0C6 /* libate.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libate.tbd; path = usr/lib/libate.tbd; sourceTree = SDKROOT; };
 		33A3559823D6980E008FD0C6 /* libswiftCoreGraphics.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftCoreGraphics.tbd; path = usr/lib/swift/libswiftCoreGraphics.tbd; sourceTree = SDKROOT; };
@@ -861,8 +866,11 @@
 				335CBC6623D69B52003C6C99 /* Loja.m */,
 				33C08FDF217EA7C100A73929 /* AppDelegate.h */,
 				33C08FE0217EA7C100A73929 /* AppDelegate.m */,
+				339031A023E37E8A0095752F /* DetalheFoto.h */,
+				339031A123E37F4B0095752F /* DetalheFoto.xib */,
 				33C08FE2217EA7C100A73929 /* MainViewController.h */,
 				338C746423E2EDAC00B8F49F /* DetalheLoja.xib */,
+				3390319E23E37E310095752F /* DetalheFoto.m */,
 				33C08FE3217EA7C100A73929 /* MainViewController.m */,
 				338C746123E2EC7500B8F49F /* DetalheLoja.m */,
 				338C746323E2EC8F00B8F49F /* DetalheLoja.h */,
@@ -938,6 +946,7 @@
 				33C08FE9217EA7C500A73929 /* Assets.xcassets in Resources */,
 				33C08FE7217EA7C100A73929 /* Main.storyboard in Resources */,
 				3386D11723DC708900FB15EA /* lojas.plist in Resources */,
+				339031A223E37F4B0095752F /* DetalheFoto.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,6 +958,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				335CBC6723D69B52003C6C99 /* Loja.m in Sources */,
+				3390319F23E37E310095752F /* DetalheFoto.m in Sources */,
 				33A3559423D69712008FD0C6 /* main.m in Sources */,
 				33A3559323D6970E008FD0C6 /* MainViewController.m in Sources */,
 				33A3559223D6970A008FD0C6 /* AppDelegate.m in Sources */,

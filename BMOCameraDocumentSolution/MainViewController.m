@@ -41,7 +41,7 @@
         NSString *logradouro = [dicioEndereco objectForKey:@"logradouro"];
         Endereco *endereco = [[Endereco alloc] initWithComplemento:complemento andBairro:bairro andNumero:numero andLogradouro:logradouro];
         
-        Loja *c = [[Loja alloc] initWithNome:nome  andIdentidade:identidade andTelefone:telefone andEndereco:endereco];
+        Loja *c = [[Loja alloc] initWithNome:nome  andIdentidade:identidade andTelefone:telefone andEndereco:endereco andFoto:[[UIImageView alloc] init]];
         [lojas addObject:c];
         // [c release];
     }
@@ -99,10 +99,11 @@
 
 
 -(void) showDetalheLoja:(Loja*)loja {
-    DetalheLoja *dl = [[DetalheLoja alloc] init];
+    DetalheLoja *dl = [[DetalheLoja alloc] initWithLoja:loja andTelefone:loja.telefone andEndereco:loja.endereco andFoto:loja.foto];
     
     dl.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    
+    //UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:dl];
+    //[self.navigationController presentModalViewController:controller animated:YES];
     [self presentModalViewController:dl animated:YES];
     //[dl release];
 }
