@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 
+//TODO: Deletar as 2 linhas abaixo
+//#import <CoreData/CoreData.h>
+//#import <RestKit/RestKit.h>
+
 @interface AppDelegate ()
 
 @end
@@ -16,6 +20,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    //TODO: Deletar as 2 linhas abaixo
+    //RKObjectManager* gerenciadorDeObjetos = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"https://api.myjson.com/bins/hvcbf"]];
+    //RKManagedObjectStore* lojaDeObjetos = [RKManagedObjectStore Store]
+    
     // Override point for customization after application launch.
     return YES;
 }

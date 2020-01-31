@@ -6,6 +6,7 @@
 //  Copyright © 2018 Breno Medeiros. All rights reserved.
 //
 
+#import <CoreData/CoreData.h>
 #import <RestKit/RestKit.h>
 
 #import "MainViewController.h"
@@ -14,7 +15,10 @@
 #import "DetalheLoja.h"
 
 @interface MainViewController ()
-
+//TODO: Deletar as 3 linhas abaixo
+@property (nonatomic, copy) NSNumber *userID;
+@property (nonatomic, copy) NSString *username;
+@property (nonatomic, copy) NSString *text;
 @end
 
 @implementation MainViewController
@@ -22,6 +26,52 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    
+    //METODO 1 - Rest
+    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Loja class]];
+    [mapping addAttributeMappingsFromDictionary:@{
+        @"id":                      @"id",
+        @"nome":                    @"nome",
+        @"telefone":                @"telefone"
+    }];
+    //TODO: Inserir as 4 linhas abaixo, acima
+    /*@"endereco.complemento":    @"endereco.complemento",
+    @"endereco.bairro":         @"endereco.bairro",
+    @"endereco.numero":         @"endereco.numero",
+    @"endereco.logradouro":     @"endereco.logradouro",*/
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodAny pathPattern:nil keyPath:nil statusCodes:nil];
+    //NSURL *url = [NSURL URLWithString:@"https://api.myjson.com/bins/hvcbf"];
+    NSURL *url = [NSURL URLWithString:@"https://sendeyo.com/up/d/4a77a6e4b1"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
+    [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result) {
+        NSLog(@"The public timeline Tweets: %@", [result array]);
+    } failure:nil ];
+    [operation start];
+
+
+    
+    //METODO 2 - Rest
+    /*RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Article class]];
+    [mapping addAttributeMappingsFromArray:@[@"id", @"nome", @"telefone"]];
+    NSIndexSet *statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful); // Anything in 2xx
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodAny pathPattern:@"/articles/:articleID" keyPath:@"article" statusCodes:statusCodes];
+
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://sendeyo.com/up/d/f29a8dd3c9"]];
+    RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
+    [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result) {
+        Article *article = [result firstObject];
+        NSLog(@"Mapped the article: %@", article);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        NSLog(@"Failed with error: %@", [error localizedDescription]);
+    }];
+    [operation start];*/
+
+
+
+    // Metodo 3 - lojas.plist
     [self loadLojas];
 }
 

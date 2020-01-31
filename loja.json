@@ -1,0 +1,11 @@
+{
+	"id": "1",
+	"endereco": {
+		"complemento": "",
+		"bairro": "Bairro Camera",
+		"numero": "01",
+		"logradouro": "Rua de teste 01"
+	},
+	"nome": "Android Stduio",
+	"telefone": "(81) 3465-0787"
+}
