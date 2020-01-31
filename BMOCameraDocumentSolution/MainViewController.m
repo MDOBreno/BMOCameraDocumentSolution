@@ -99,7 +99,7 @@
 
 
 -(void) showDetalheLoja:(Loja*)loja {
-    DetalheLoja *dl = [[DetalheLoja alloc] initWithLoja:loja andTelefone:loja.telefone andEndereco:loja.endereco andFoto:loja.foto];
+    DetalheLoja *dl = [[DetalheLoja alloc] initWithLoja:loja];
     
     dl.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     //UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:dl];

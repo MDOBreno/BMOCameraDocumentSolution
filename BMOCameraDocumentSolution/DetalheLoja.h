@@ -18,10 +18,7 @@
     @public Loja *loja;
 }
 
--(id) initWithLoja:(Loja *) lojaInicial
-       andTelefone:(NSString *)telefoneInicial
-        andEndereco:(Endereco *)enderecoInicial
-        andFoto:(UIImage *)fotoInicial;
+-(id) initWithLoja:(Loja *) lojaInicial;
 
 @property (weak, nonatomic) IBOutlet UITextField *tfNome;
 @property (weak, nonatomic) IBOutlet UITextField *tfTelefone;

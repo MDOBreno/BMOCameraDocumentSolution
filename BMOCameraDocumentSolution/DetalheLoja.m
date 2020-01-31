@@ -24,42 +24,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self preencherCamposWith:self->loja
-        andTelefone:self->loja.telefone
-        andEndereco:self->loja.endereco
-        andFoto:self->loja.foto.image];
+    [self preencherCamposWith:self->loja];
 }
 
 
-- (id)initWithLoja:(Loja *)lojaInicial
-        andTelefone:(NSString *) telefoneInicial
-        andEndereco:(Endereco *) enderecoInicial
-        andFoto:(UIImage *) fotoInicial {
+- (id)initWithLoja:(Loja *)lojaInicial {
     
     if(( self = [super init] )) {
-        [self preencherCamposWith:lojaInicial
-            andTelefone:telefoneInicial
-            andEndereco:enderecoInicial
-            andFoto:fotoInicial];
+        [self preencherCamposWith:lojaInicial];
     }
     
     return self;
 }
 
-- (void) preencherCamposWith:(Loja *)lojaInicial
-        andTelefone:(NSString *) telefoneInicial
-        andEndereco:(Endereco *) enderecoInicial
-        andFoto:(UIImage *) fotoInicial {
+- (void) preencherCamposWith:(Loja *)lojaInicial {
     
     self->loja = lojaInicial;
     self.tfNome.text = loja.nome;
-    self.tfTelefone.text = telefoneInicial;
+    self.tfTelefone.text = loja.telefone;
     
     self.tvEndereco.text = [NSString stringWithFormat:@"Logradouro: %@\nNumero: %@\nComplemento: %@\nBairro: %@",
-                            enderecoInicial.logradouro,
-                            enderecoInicial.numero,
-                            enderecoInicial.complemento,
-                            enderecoInicial.bairro];
+                            loja.endereco.logradouro,
+                            loja.endereco.numero,
+                            loja.endereco.complemento,
+                            loja.endereco.bairro];
     self.tvEndereco.layer.borderWidth = 0.4;
     self.tvEndereco.layer.borderColor = [[UIColor grayColor] CGColor];
     self.tvEndereco.layer.cornerRadius = 5;
