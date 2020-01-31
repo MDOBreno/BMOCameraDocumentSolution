@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[DetalheLoja preencherCamposWith:andTelefone:andEndereco:andFoto:]:DetalheLoja.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tvEndereco.text">
+            </PersistentString>
+            <PersistentString
+               value = "self.ivFoto.image">
+            </PersistentString>
+            <PersistentString
+               value = "self.tfNome.text">
+            </PersistentString>
+            <PersistentString
+               value = "[UIImage imageNamed:@&quot;Icone Preenchido&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "self.tfTelefone.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MainViewController showDetalheLoja:]:MainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "dl.tvEndereco.text">
+            </PersistentString>
+            <PersistentString
+               value = "dl.tfNome.text">
+            </PersistentString>
+            <PersistentString
+               value = "dl.tfTelefone.text">
+            </PersistentString>
+            <PersistentString
+               value = "dl.ivFoto.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MainViewController loadLojas]:MainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "c.foto">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DetalheLoja preencherCamposWith:]:DetalheLoja.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tvEndereco.text">
+            </PersistentString>
+            <PersistentString
+               value = "self.ivFoto.image">
+            </PersistentString>
+            <PersistentString
+               value = "self.tfNome.text">
+            </PersistentString>
+            <PersistentString
+               value = "self.tfTelefone.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DetalheFoto initWithFoto:]:DetalheFoto.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[fotoInicial isEqual:foto]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DetalheLoja btEditar:]:DetalheLoja.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tvEndereco.text">
+            </PersistentString>
+            <PersistentString
+               value = "self.ivFoto.image">
+            </PersistentString>
+            <PersistentString
+               value = "self.tfNome.text">
+            </PersistentString>
+            <PersistentString
+               value = "self.tfTelefone.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MainViewController tableView:didSelectRowAtIndexPath:]:MainViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[DetalheLoja initWithLoja:]:DetalheLoja.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tfNome.attributedPlaceholder">
+            </PersistentString>
+            <PersistentString
+               value = "self.tvEndereco.text">
+            </PersistentString>
+            <PersistentString
+               value = "self.tfNome.text">
+            </PersistentString>
+            <PersistentString
+               value = "self.tvEndereco.layer.borderWidth">
+            </PersistentString>
+            <PersistentString
+               value = "self.ivFoto.image">
+            </PersistentString>
+            <PersistentString
+               value = "self.tfTelefone.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DetalheLoja viewDidLoad]:DetalheLoja.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tfNome.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DetalheLoja initWithLoja:andTelefone:andEndereco:andFoto:]:DetalheLoja.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tfTelefone.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DetalheLoja voltar:]:DetalheLoja.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tvEndereco.text">
+            </PersistentString>
+            <PersistentString
+               value = "self.ivFoto.image">
+            </PersistentString>
+            <PersistentString
+               value = "self.tfNome.text">
+            </PersistentString>
+            <PersistentString
+               value = "self.tfTelefone.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -21,6 +21,7 @@
 		33C08FE9217EA7C500A73929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C08FE8217EA7C500A73929 /* Assets.xcassets */; };
 		33C08FEC217EA7C500A73929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C08FEA217EA7C500A73929 /* LaunchScreen.storyboard */; };
 		33F25D4B23E22ACD00077B87 /* Endereco.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F25D4A23E22ACD00077B87 /* Endereco.m */; };
+		99C6A4DCBEBF4F941426106E /* Pods_BMO05TableViewSimpleContactList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC71C13813B0AB31C0A88CC3 /* Pods_BMO05TableViewSimpleContactList.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -435,6 +436,9 @@
 		33C08FEE217EA7C500A73929 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33F25D4A23E22ACD00077B87 /* Endereco.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Endereco.m; sourceTree = "<group>"; };
 		33F25D4C23E22B0400077B87 /* Endereco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Endereco.h; sourceTree = "<group>"; };
+		4A85350DC4FF27E59BD50A28 /* Pods-BMO05TableViewSimpleContactList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMO05TableViewSimpleContactList.release.xcconfig"; path = "Target Support Files/Pods-BMO05TableViewSimpleContactList/Pods-BMO05TableViewSimpleContactList.release.xcconfig"; sourceTree = "<group>"; };
+		8907AB14DF826CF73B760123 /* Pods-BMO05TableViewSimpleContactList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMO05TableViewSimpleContactList.debug.xcconfig"; path = "Target Support Files/Pods-BMO05TableViewSimpleContactList/Pods-BMO05TableViewSimpleContactList.debug.xcconfig"; sourceTree = "<group>"; };
+		AC71C13813B0AB31C0A88CC3 /* Pods_BMO05TableViewSimpleContactList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMO05TableViewSimpleContactList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -442,6 +446,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99C6A4DCBEBF4F941426106E /* Pods_BMO05TableViewSimpleContactList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,6 +888,7 @@
 				33A355FB23D69810008FD0C6 /* WebKit.framework */,
 				33A356AE23D69816008FD0C6 /* XcodeKit.framework */,
 				33A356D223D6981A008FD0C6 /* XCTest.framework */,
+				AC71C13813B0AB31C0A88CC3 /* Pods_BMO05TableViewSimpleContactList.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -893,6 +899,7 @@
 				33C08FDE217EA7C100A73929 /* BMOCameraDocumentSolution */,
 				33C08FDD217EA7C100A73929 /* Products */,
 				33A3559523D6980E008FD0C6 /* Frameworks */,
+				B7693DD8B3B254FFB89615AA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -921,6 +928,16 @@
 			path = BMOCameraDocumentSolution;
 			sourceTree = "<group>";
 		};
+		B7693DD8B3B254FFB89615AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8907AB14DF826CF73B760123 /* Pods-BMO05TableViewSimpleContactList.debug.xcconfig */,
+				4A85350DC4FF27E59BD50A28 /* Pods-BMO05TableViewSimpleContactList.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -928,9 +945,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33C08FF2217EA7C500A73929 /* Build configuration list for PBXNativeTarget "BMO05TableViewSimpleContactList" */;
 			buildPhases = (
+				CA8EF355AABF39610CD0A667 /* [CP] Check Pods Manifest.lock */,
 				33C08FD8217EA7C100A73929 /* Sources */,
 				33C08FD9217EA7C100A73929 /* Frameworks */,
 				33C08FDA217EA7C100A73929 /* Resources */,
+				D4FDF3760709BBC2AEFA8A40 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -988,6 +1007,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CA8EF355AABF39610CD0A667 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BMO05TableViewSimpleContactList-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4FDF3760709BBC2AEFA8A40 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BMO05TableViewSimpleContactList/Pods-BMO05TableViewSimpleContactList-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BMO05TableViewSimpleContactList/Pods-BMO05TableViewSimpleContactList-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BMO05TableViewSimpleContactList/Pods-BMO05TableViewSimpleContactList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		33C08FD8217EA7C100A73929 /* Sources */ = {
@@ -1141,6 +1202,7 @@
 		};
 		33C08FF3217EA7C500A73929 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8907AB14DF826CF73B760123 /* Pods-BMO05TableViewSimpleContactList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1166,6 +1228,7 @@
 		};
 		33C08FF4217EA7C500A73929 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A85350DC4FF27E59BD50A28 /* Pods-BMO05TableViewSimpleContactList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
