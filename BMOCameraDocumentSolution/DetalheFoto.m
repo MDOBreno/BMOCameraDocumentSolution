@@ -27,7 +27,6 @@ AVCaptureStillImageOutput *aindaEaImagemDeSaida;
 }
 
 - (id)initWithFoto:(UIImageView *)fotoInicial {
-    
     if(( self = [super init] )) {
         self->foto = fotoInicial;
     }
@@ -64,11 +63,6 @@ AVCaptureStillImageOutput *aindaEaImagemDeSaida;
     [sessao addOutput:aindaEaImagemDeSaida];
 
     [sessao startRunning];
-}
-
-
--(void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 

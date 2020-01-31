@@ -102,8 +102,7 @@
     DetalheLoja *dl = [[DetalheLoja alloc] initWithLoja:loja];
     
     dl.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    //UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:dl];
-    //[self.navigationController presentModalViewController:controller animated:YES];
+    
     [self presentModalViewController:dl animated:YES];
     //[dl release];
 }
