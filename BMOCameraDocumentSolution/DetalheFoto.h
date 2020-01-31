@@ -7,16 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 
 @interface DetalheFoto : UIViewController{
     UIImageView *foto;
+    __weak IBOutlet UIImageView *ivCameraInsta;
+    IBOutlet UIView *quadroParaCaptura;
+    IBOutlet UIImageView *ivImagem;
 }
 
 -(id) initWithFoto:(UIImageView *) fotoInicial;
 
- @property (weak, nonatomic) IBOutlet UIImageView *ivFoto;
 
+- (IBAction)baterFoto:(id)sender;
 
 @end
 
