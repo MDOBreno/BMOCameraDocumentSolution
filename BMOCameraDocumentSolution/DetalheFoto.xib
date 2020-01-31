@@ -40,13 +40,13 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qgr-Rl-gpe">
-                    <rect key="frame" x="36" y="304" width="202" height="222"/>
+                    <rect key="frame" x="40" y="304" width="190" height="222"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mz8-hq-hHC">
-                    <rect key="frame" x="28" y="79" width="265" height="191"/>
+                    <rect key="frame" x="34" y="79" width="259" height="200"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="mz8-hq-hHC" secondAttribute="height" multiplier="265:191" id="RDH-Ru-wXM"/>
+                        <constraint firstAttribute="height" constant="200" id="J0b-C5-5GD"/>
                     </constraints>
                 </view>
             </subviews>
@@ -60,11 +60,11 @@
                 <constraint firstItem="EGr-gL-T48" firstAttribute="top" secondItem="eLO-JN-AgB" secondAttribute="bottom" constant="3" id="L37-UY-k7s"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mz8-hq-hHC" secondAttribute="trailing" constant="27" id="N0z-rC-hG9"/>
                 <constraint firstItem="mz8-hq-hHC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="79" id="S95-In-Pdd"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Qgr-Rl-gpe" secondAttribute="trailing" constant="82" id="TWc-bz-0IO"/>
-                <constraint firstItem="Qgr-Rl-gpe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="36" id="dCX-NU-hfr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Qgr-Rl-gpe" secondAttribute="trailing" constant="90" id="TWc-bz-0IO"/>
+                <constraint firstItem="Qgr-Rl-gpe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="dCX-NU-hfr"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="EGr-gL-T48" secondAttribute="bottom" constant="20" id="e4z-Ac-wKn"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eLO-JN-AgB" secondAttribute="trailing" constant="16" id="eGl-dl-0EV"/>
-                <constraint firstItem="mz8-hq-hHC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="28" id="fnW-2r-TO5"/>
+                <constraint firstItem="mz8-hq-hHC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="34" id="fnW-2r-TO5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="S1h-Nz-Gbm" secondAttribute="trailing" constant="27" id="hgr-lj-UEi"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EGr-gL-T48" secondAttribute="trailing" constant="16" id="ioY-LB-zTf"/>
                 <constraint firstItem="Qgr-Rl-gpe" firstAttribute="top" secondItem="eLO-JN-AgB" secondAttribute="bottom" constant="23" id="zFd-6C-r5T"/>
