@@ -6,6 +6,8 @@
 //  Copyright © 2018 Breno Medeiros. All rights reserved.
 //
 
+#import <RestKit/RestKit.h>
+
 #import "MainViewController.h"
 #import "Loja.h"
 #import "Endereco.h"

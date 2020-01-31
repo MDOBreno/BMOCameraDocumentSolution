@@ -1,5 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-BMO05TableViewSimpleContactList/Pods-BMO05TableViewSimpleContactList-frameworks.sh
-${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
 ${BUILT_PRODUCTS_DIR}/ISO8601DateFormatterValueTransformer/ISO8601DateFormatterValueTransformer.framework
 ${BUILT_PRODUCTS_DIR}/RKValueTransformers/RKValueTransformers.framework
 ${BUILT_PRODUCTS_DIR}/RestKit/RestKit.framework

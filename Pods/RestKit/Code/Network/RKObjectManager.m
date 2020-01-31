@@ -19,6 +19,8 @@
 //
 
 #import <objc/runtime.h>
+#import "AFRKNetworking.h"
+
 #import "RKObjectManager.h"
 #import "RKObjectParameterization.h"
 #import "RKRequestDescriptor.h"
@@ -37,17 +39,15 @@
 #import "RKRoute.h"
 #import "RKRouteSet.h"
 
-#ifdef _COREDATADEFINES_H
-#if __has_include("RKCoreData.h")
-#define RKCoreDataIncluded
-#import "RKManagedObjectStore.h"
-#import "RKManagedObjectRequestOperation.h"
-#endif
+#if __has_include("CoreData.h")
+#   define RKCoreDataIncluded
+#   import "RKManagedObjectStore.h"
+#   import "RKManagedObjectRequestOperation.h"
 #endif
 
 #if !__has_feature(objc_arc)
-#error RestKit must be built with ARC.
-// You can turn on ARC for only RestKit files by adding "-fobjc-arc" to the build phase for each of its files.
+#error RestKit must be built with ARC. \
+You can turn on ARC for only RestKit files by adding "-fobjc-arc" to the build phase for each of its files.
 #endif
 
 //////////////////////////////////
@@ -171,6 +171,14 @@ extern NSString *RKStringDescribingRequestMethod(RKRequestMethod method);
 @end
 
 @implementation RKMappingGraphVisitor
+
+- (instancetype)init
+{
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:[NSString stringWithFormat:@"-init is not a valid initializer for the class %@, use designated initilizer -initWithMapping:", NSStringFromClass([self class])]
+                                 userInfo:nil];
+    return [self init];
+}
 
 - (instancetype)initWithMapping:(RKMapping *)mapping
 {
@@ -308,18 +316,18 @@ static BOOL RKDoesArrayOfResponseDescriptorsContainMappingForClass(NSArray *resp
     return NO;
 }
 
-static NSString *RKMIMETypeFromAFHTTPClientParameterEncoding(AFHTTPClientParameterEncoding encoding)
+static NSString *RKMIMETypeFromAFHTTPClientParameterEncoding(AFRKHTTPClientParameterEncoding encoding)
 {
     switch (encoding) {
-        case AFFormURLParameterEncoding:
+        case AFRKFormURLParameterEncoding:
             return RKMIMETypeFormURLEncoded;
             break;
             
-        case AFJSONParameterEncoding:
+        case AFRKJSONParameterEncoding:
             return RKMIMETypeJSON;
             break;
             
-        case AFPropertyListParameterEncoding:
+        case AFRKPropertyListParameterEncoding:
             break;
             
         default:
@@ -330,7 +338,7 @@ static NSString *RKMIMETypeFromAFHTTPClientParameterEncoding(AFHTTPClientParamet
     return RKMIMETypeFormURLEncoded;
 }
 
-@interface AFHTTPClient ()
+@interface AFRKHTTPClient ()
 @property (readonly, nonatomic, strong) NSURLCredential *defaultCredential;
 @end
 
@@ -348,7 +356,15 @@ static NSString *RKMIMETypeFromAFHTTPClientParameterEncoding(AFHTTPClientParamet
 
 @implementation RKObjectManager
 
-- (instancetype)initWithHTTPClient:(AFHTTPClient *)client
+- (instancetype)init
+{
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:[NSString stringWithFormat:@"-init is not a valid initializer for the class %@, use designated initilizer -initWithHTTPClient:", NSStringFromClass([self class])]
+                                 userInfo:nil];
+    return [self init];
+}
+
+- (instancetype)initWithHTTPClient:(AFRKHTTPClient *)client
 {
     self = [super init];
     if (self) {
@@ -384,8 +400,8 @@ static NSString *RKMIMETypeFromAFHTTPClientParameterEncoding(AFHTTPClientParamet
 
 + (RKObjectManager *)managerWithBaseURL:(NSURL *)baseURL
 {
-    RKObjectManager *manager = [[self alloc] initWithHTTPClient:[AFHTTPClient clientWithBaseURL:baseURL]];
-    [manager.HTTPClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
+    RKObjectManager *manager = [[self alloc] initWithHTTPClient:[AFRKHTTPClient clientWithBaseURL:baseURL]];
+    [manager.HTTPClient registerHTTPOperationClass:[AFRKJSONRequestOperation class]];
     [manager setAcceptHeaderWithMIMEType:RKMIMETypeJSON];
     manager.requestSerializationMIMEType = RKMIMETypeFormURLEncoded;
     return manager;
@@ -418,7 +434,7 @@ static NSString *RKMIMETypeFromAFHTTPClientParameterEncoding(AFHTTPClientParamet
     NSMutableURLRequest* request;
     if (parameters && !([method isEqualToString:@"GET"] || [method isEqualToString:@"HEAD"] || [method isEqualToString:@"DELETE"])) {
         // NOTE: If the HTTP client has been subclasses, then the developer may be trying to perform signing on the request
-        NSDictionary *parametersForClient = [self.HTTPClient isMemberOfClass:[AFHTTPClient class]] ? nil : parameters;
+        NSDictionary *parametersForClient = [self.HTTPClient isMemberOfClass:[AFRKHTTPClient class]] ? nil : parameters;
         request = [self.HTTPClient requestWithMethod:method path:path parameters:parametersForClient];
 		
         NSError *error = nil;
@@ -499,7 +515,7 @@ static NSString *RKMIMETypeFromAFHTTPClientParameterEncoding(AFHTTPClientParamet
                                                  method:(RKRequestMethod)method
                                                    path:(NSString *)path
                                              parameters:(NSDictionary *)parameters
-                              constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
+                              constructingBodyWithBlock:(void (^)(id <AFRKMultipartFormData> formData))block
 {
     NSString *requestPath = (path) ? path : [[self.router URLForObject:object method:method] relativeString];
     id requestParameters = [self mergedParametersWithObject:object method:method parameters:parameters];
@@ -552,11 +568,11 @@ static NSString *RKMIMETypeFromAFHTTPClientParameterEncoding(AFHTTPClientParamet
 
 #pragma mark - Object Request Operations
 
-- (void)copyStateFromHTTPClientToHTTPRequestOperation:(AFHTTPRequestOperation *)operation
+- (void)copyStateFromHTTPClientToHTTPRequestOperation:(AFRKHTTPRequestOperation *)operation
 {
     operation.credential = self.HTTPClient.defaultCredential;
     operation.allowsInvalidSSLCertificate = self.HTTPClient.allowsInvalidSSLCertificate;
-#ifdef _AFNETWORKING_PIN_SSL_CERTIFICATES_
+#ifdef _AFRKNETWORKING_PIN_SSL_CERTIFICATES_
     operation.SSLPinningMode = self.HTTPClient.defaultSSLPinningMode;
 #endif
 }
@@ -648,17 +664,18 @@ static NSString *RKMIMETypeFromAFHTTPClientParameterEncoding(AFHTTPClientParamet
         if ([object isKindOfClass:[NSManagedObject class]]) {
             static NSPredicate *temporaryObjectsPredicate = nil;
             if (! temporaryObjectsPredicate) temporaryObjectsPredicate = [NSPredicate predicateWithFormat:@"objectID.isTemporaryID == YES"];
-            NSSet *temporaryObjects = [[managedObjectContext insertedObjects] filteredSetUsingPredicate:temporaryObjectsPredicate];
-            if ([temporaryObjects count]) {
-                RKLogInfo(@"Asked to perform object request for NSManagedObject with temporary object IDs: Obtaining permanent ID before proceeding.");
-                __block BOOL _blockSuccess;
-                __block NSError *_blockError;
-
-                [[object managedObjectContext] performBlockAndWait:^{
-                    _blockSuccess = [[object managedObjectContext] obtainPermanentIDsForObjects:[temporaryObjects allObjects] error:&_blockError];
-                }];
-                if (! _blockSuccess) RKLogWarning(@"Failed to obtain permanent ID for object %@: %@", object, _blockError);
-            }
+            [managedObjectContext performBlockAndWait:^{
+                NSSet *temporaryObjects = [[managedObjectContext insertedObjects] filteredSetUsingPredicate:temporaryObjectsPredicate];
+                if ([temporaryObjects count]) {
+                    RKLogInfo(@"Asked to perform object request for NSManagedObject with temporary object IDs: Obtaining permanent ID before proceeding.");
+                    BOOL success;
+                    NSError *error;
+                    
+                    success = [managedObjectContext obtainPermanentIDsForObjects:[temporaryObjects allObjects] error:&error];
+                    
+                    if (! success) RKLogWarning(@"Failed to obtain permanent ID for object %@: %@", object, error);
+                }
+            }];
         }
     } else {
         // Non-Core Data operation
@@ -1004,13 +1021,13 @@ static NSString *RKMIMETypeFromAFHTTPClientParameterEncoding(AFHTTPClientParamet
 @end
 
 #ifdef _SYSTEMCONFIGURATION_H
-NSString *RKStringFromNetworkReachabilityStatus(AFNetworkReachabilityStatus networkReachabilityStatus)
+NSString *RKStringFromNetworkReachabilityStatus(AFRKNetworkReachabilityStatus networkReachabilityStatus)
 {
     switch (networkReachabilityStatus) {
-        case AFNetworkReachabilityStatusNotReachable:     return @"Not Reachable";
-        case AFNetworkReachabilityStatusReachableViaWiFi: return @"Reachable via WiFi";
-        case AFNetworkReachabilityStatusReachableViaWWAN: return @"Reachable via WWAN";
-        case AFNetworkReachabilityStatusUnknown:          return @"Reachability Unknown";
+        case AFRKNetworkReachabilityStatusNotReachable:     return @"Not Reachable";
+        case AFRKNetworkReachabilityStatusReachableViaWiFi: return @"Reachable via WiFi";
+        case AFRKNetworkReachabilityStatusReachableViaWWAN: return @"Reachable via WWAN";
+        case AFRKNetworkReachabilityStatusUnknown:          return @"Reachability Unknown";
         default:                                          break;
     }
     return nil;
