@@ -11,10 +11,10 @@
 
 
 @interface DetalheFoto : UIViewController{
-    UIImageView *foto;
+    UIImage *foto;
     __weak IBOutlet UIImageView *ivCameraInsta;
     IBOutlet UIView *quadroParaCaptura;
-    IBOutlet UIImageView *ivImagem;
+    @public IBOutlet UIImageView *ivImagem;
 }
 
 -(id) initWithFoto:(UIImageView *) fotoInicial;

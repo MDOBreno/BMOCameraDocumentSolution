@@ -19,11 +19,12 @@
 
 @implementation DetalheLoja
 
-
+DetalheFoto *df;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
     [self preencherCamposWith:self->loja];
 }
 
@@ -52,7 +53,8 @@
     self.tvEndereco.layer.borderColor = [[UIColor grayColor] CGColor];
     self.tvEndereco.layer.cornerRadius = 5;
     
-    self.ivFoto.image = [UIImage imageNamed:@"Icone Preenchido"];
+    df = [[DetalheFoto alloc] initWithFoto:loja.foto];
+    self.ivFoto.image = loja.foto.image;
 }
 
 
@@ -61,8 +63,6 @@
 }
 
 - (IBAction)btEditar:(id)sender {
-    DetalheFoto *df = [[DetalheFoto alloc] initWithFoto:loja.foto];
-    
     df.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     
     [self presentModalViewController:df animated:YES];

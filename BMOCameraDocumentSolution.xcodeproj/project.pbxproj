@@ -11,7 +11,7 @@
 		3386D11723DC708900FB15EA /* lojas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3386D11623DC708900FB15EA /* lojas.plist */; };
 		338C746223E2EC7500B8F49F /* DetalheLoja.m in Sources */ = {isa = PBXBuildFile; fileRef = 338C746123E2EC7500B8F49F /* DetalheLoja.m */; };
 		338C746523E2EDAC00B8F49F /* DetalheLoja.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338C746423E2EDAC00B8F49F /* DetalheLoja.xib */; };
-		3390319F23E37E310095752F /* DetalheFoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3390319E23E37E310095752F /* DetalheFoto.m */; };
+		3390319F23E37E310095752F /* DetalheFoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3390319E23E37E310095752F /* DetalheFoto.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		339031A223E37F4B0095752F /* DetalheFoto.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339031A123E37F4B0095752F /* DetalheFoto.xib */; };
 		33A3559223D6970A008FD0C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C08FE0217EA7C100A73929 /* AppDelegate.m */; };
 		33A3559323D6970E008FD0C6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C08FE3217EA7C100A73929 /* MainViewController.m */; };

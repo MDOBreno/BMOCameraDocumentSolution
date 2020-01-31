@@ -26,7 +26,7 @@ AVCaptureStillImageOutput *aindaEaImagemDeSaida;
     quadroParaCaptura.layer.zPosition = 5;
 }
 
-- (id)initWithFoto:(UIImageView *)fotoInicial {
+- (id)initWithFoto:(UIImage *)fotoInicial {
     if(( self = [super init] )) {
         self->foto = fotoInicial;
     }

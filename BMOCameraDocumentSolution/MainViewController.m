@@ -33,6 +33,7 @@
         NSString *nome = [item objectForKey:@"nome"];
         NSString *identidade = [item objectForKey:@"identidade"];
         NSString *telefone = [item objectForKey:@"telefone"];
+        UIImage *foto = [UIImage imageNamed:@"Icone Preenchido"];
         
         NSDictionary *dicioEndereco = [item objectForKey:@"endereco"];
         NSString *complemento = [dicioEndereco objectForKey:@"complemento"];
@@ -41,7 +42,7 @@
         NSString *logradouro = [dicioEndereco objectForKey:@"logradouro"];
         Endereco *endereco = [[Endereco alloc] initWithComplemento:complemento andBairro:bairro andNumero:numero andLogradouro:logradouro];
         
-        Loja *c = [[Loja alloc] initWithNome:nome  andIdentidade:identidade andTelefone:telefone andEndereco:endereco andFoto:[[UIImageView alloc] init]];
+        Loja *c = [[Loja alloc] initWithNome:nome  andIdentidade:identidade andTelefone:telefone andEndereco:endereco andFoto:[[UIImageView alloc] initWithImage:foto]];
         [lojas addObject:c];
         // [c release];
     }
