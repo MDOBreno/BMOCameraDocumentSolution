@@ -20,8 +20,11 @@
 -(id) initWithFoto:(UIImageView *) fotoInicial;
 
 
-- (IBAction)baterFoto:(id)sender;
+- (IBAction)btBaterFoto:(id)sender;
+- (IBAction)btSalvarFoto:(id)sender;
+- (IBAction)btRotacionarfoto:(id)sender;
+- (IBAction)btCancelar:(id)sender;
 
 @end
 
-    
+

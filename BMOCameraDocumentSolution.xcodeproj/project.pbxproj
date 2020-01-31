@@ -13,6 +13,7 @@
 		338C746523E2EDAC00B8F49F /* DetalheLoja.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338C746423E2EDAC00B8F49F /* DetalheLoja.xib */; };
 		3390319F23E37E310095752F /* DetalheFoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3390319E23E37E310095752F /* DetalheFoto.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		339031A223E37F4B0095752F /* DetalheFoto.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339031A123E37F4B0095752F /* DetalheFoto.xib */; };
+		3393482023E49BF900BBEFCE /* UIImage-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3393481F23E49BF900BBEFCE /* UIImage-Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		33A3559223D6970A008FD0C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C08FE0217EA7C100A73929 /* AppDelegate.m */; };
 		33A3559323D6970E008FD0C6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C08FE3217EA7C100A73929 /* MainViewController.m */; };
 		33A3559423D69712008FD0C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C08FEE217EA7C500A73929 /* main.m */; };
@@ -32,6 +33,8 @@
 		3390319E23E37E310095752F /* DetalheFoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetalheFoto.m; sourceTree = "<group>"; };
 		339031A023E37E8A0095752F /* DetalheFoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetalheFoto.h; sourceTree = "<group>"; };
 		339031A123E37F4B0095752F /* DetalheFoto.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetalheFoto.xib; sourceTree = "<group>"; };
+		3393481F23E49BF900BBEFCE /* UIImage-Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Extensions.m"; sourceTree = "<group>"; };
+		3393482123E49C4C00BBEFCE /* UIImage-Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage-Extensions.h"; sourceTree = "<group>"; };
 		33A3559623D6980E008FD0C6 /* libomadm.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libomadm.tbd; path = usr/lib/libomadm.tbd; sourceTree = SDKROOT; };
 		33A3559723D6980E008FD0C6 /* libate.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libate.tbd; path = usr/lib/libate.tbd; sourceTree = SDKROOT; };
 		33A3559823D6980E008FD0C6 /* libswiftCoreGraphics.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftCoreGraphics.tbd; path = usr/lib/swift/libswiftCoreGraphics.tbd; sourceTree = SDKROOT; };
@@ -445,6 +448,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3393481E23E49BD300BBEFCE /* extensoes */ = {
+			isa = PBXGroup;
+			children = (
+				3393481F23E49BF900BBEFCE /* UIImage-Extensions.m */,
+				3393482123E49C4C00BBEFCE /* UIImage-Extensions.h */,
+			);
+			name = extensoes;
+			sourceTree = "<group>";
+		};
+		3393482223E4A28500BBEFCE /* model */ = {
+			isa = PBXGroup;
+			children = (
+				335CBC6823D69B6C003C6C99 /* Loja.h */,
+				33F25D4A23E22ACD00077B87 /* Endereco.m */,
+				33F25D4C23E22B0400077B87 /* Endereco.h */,
+				335CBC6623D69B52003C6C99 /* Loja.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		3393482323E4A2A300BBEFCE /* view */ = {
+			isa = PBXGroup;
+			children = (
+				339031A123E37F4B0095752F /* DetalheFoto.xib */,
+				338C746423E2EDAC00B8F49F /* DetalheLoja.xib */,
+				33C08FE5217EA7C100A73929 /* Main.storyboard */,
+				33C08FEA217EA7C500A73929 /* LaunchScreen.storyboard */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		3393482423E4A2EA00BBEFCE /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				339031A023E37E8A0095752F /* DetalheFoto.h */,
+				33C08FE2217EA7C100A73929 /* MainViewController.h */,
+				3390319E23E37E310095752F /* DetalheFoto.m */,
+				33C08FE3217EA7C100A73929 /* MainViewController.m */,
+				338C746123E2EC7500B8F49F /* DetalheLoja.m */,
+				338C746323E2EC8F00B8F49F /* DetalheLoja.h */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
 		33A3559523D6980E008FD0C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -860,23 +907,13 @@
 		33C08FDE217EA7C100A73929 /* BMOCameraDocumentSolution */ = {
 			isa = PBXGroup;
 			children = (
-				335CBC6823D69B6C003C6C99 /* Loja.h */,
-				33F25D4A23E22ACD00077B87 /* Endereco.m */,
-				33F25D4C23E22B0400077B87 /* Endereco.h */,
-				335CBC6623D69B52003C6C99 /* Loja.m */,
+				3393482423E4A2EA00BBEFCE /* presenter */,
+				3393482323E4A2A300BBEFCE /* view */,
+				3393482223E4A28500BBEFCE /* model */,
+				3393481E23E49BD300BBEFCE /* extensoes */,
 				33C08FDF217EA7C100A73929 /* AppDelegate.h */,
 				33C08FE0217EA7C100A73929 /* AppDelegate.m */,
-				339031A023E37E8A0095752F /* DetalheFoto.h */,
-				339031A123E37F4B0095752F /* DetalheFoto.xib */,
-				33C08FE2217EA7C100A73929 /* MainViewController.h */,
-				338C746423E2EDAC00B8F49F /* DetalheLoja.xib */,
-				3390319E23E37E310095752F /* DetalheFoto.m */,
-				33C08FE3217EA7C100A73929 /* MainViewController.m */,
-				338C746123E2EC7500B8F49F /* DetalheLoja.m */,
-				338C746323E2EC8F00B8F49F /* DetalheLoja.h */,
-				33C08FE5217EA7C100A73929 /* Main.storyboard */,
 				33C08FE8217EA7C500A73929 /* Assets.xcassets */,
-				33C08FEA217EA7C500A73929 /* LaunchScreen.storyboard */,
 				3386D11623DC708900FB15EA /* lojas.plist */,
 				33C08FED217EA7C500A73929 /* Info.plist */,
 				33C08FEE217EA7C500A73929 /* main.m */,
@@ -962,6 +999,7 @@
 				33A3559423D69712008FD0C6 /* main.m in Sources */,
 				33A3559323D6970E008FD0C6 /* MainViewController.m in Sources */,
 				33A3559223D6970A008FD0C6 /* AppDelegate.m in Sources */,
+				3393482023E49BF900BBEFCE /* UIImage-Extensions.m in Sources */,
 				33F25D4B23E22ACD00077B87 /* Endereco.m in Sources */,
 				338C746223E2EC7500B8F49F /* DetalheLoja.m in Sources */,
 			);

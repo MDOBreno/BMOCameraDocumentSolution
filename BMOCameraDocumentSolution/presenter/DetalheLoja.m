@@ -63,6 +63,8 @@ DetalheFoto *df;
 }
 
 - (IBAction)btEditar:(id)sender {
+    df = [[DetalheFoto alloc] initWithFoto:loja.foto];
+    
     df.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     
     [self presentModalViewController:df animated:YES];

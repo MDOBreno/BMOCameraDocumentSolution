@@ -19,9 +19,12 @@
 
 AVCaptureSession *sessao;
 AVCaptureStillImageOutput *aindaEaImagemDeSaida;
+bool *rotacionado;
+
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+    rotacionado = false;
     ivCameraInsta.layer.zPosition = -5;
     quadroParaCaptura.layer.zPosition = 5;
 }
@@ -66,7 +69,7 @@ AVCaptureStillImageOutput *aindaEaImagemDeSaida;
 }
 
 
-- (IBAction)baterFoto:(id)sender {
+- (IBAction)btBaterFoto:(id)sender {
     AVCaptureConnection *conexaoDeVideo = nil;
     for (AVCaptureConnection *conexao in aindaEaImagemDeSaida.connections) {
         for (AVCaptureInputPort *porta in [conexao inputPorts]) {
@@ -80,10 +83,27 @@ AVCaptureStillImageOutput *aindaEaImagemDeSaida;
         if (imageDataSampleBuffer != NULL) {
             NSDate *dadosDaImagem = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
             UIImage *imagem = [UIImage imageWithData:dadosDaImagem];
-            ivImagem.image = imagem;
-        }
+            ivImagem.image = imagem;        }
     }];
 }
+
+- (IBAction)btSalvarFoto:(id)sender {
+    //super.loja.foto.image = ivImagem.image;
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)btRotacionarfoto:(id)sender {
+    if (!rotacionado) {
+        ivImagem.image = [ivImagem.image imageRotatedByDegrees:90.0];
+        rotacionado=true;
+    }
+    ivImagem.image = [ivImagem.image imageRotatedByDegrees:90.0];
+}
+
+- (IBAction)btCancelar:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 
 
 @end

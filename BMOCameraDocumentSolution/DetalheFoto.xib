@@ -36,7 +36,7 @@
                         <constraint firstAttribute="width" constant="50" id="FQt-aO-nOw"/>
                     </constraints>
                     <connections>
-                        <action selector="baterFoto:" destination="-1" eventType="touchUpInside" id="DKe-8f-bCU"/>
+                        <action selector="btBaterFoto:" destination="-1" eventType="touchUpInside" id="DKe-8f-bCU"/>
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qgr-Rl-gpe">
@@ -49,14 +49,54 @@
                         <constraint firstAttribute="height" constant="200" id="J0b-C5-5GD"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAl-3j-0x0">
+                    <rect key="frame" x="248" y="315" width="38" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="38" id="OA5-mP-OQz"/>
+                        <constraint firstAttribute="height" constant="38" id="dwb-4B-tdP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <state key="normal" title="👌🏼"/>
+                    <connections>
+                        <action selector="btSalvarFoto:" destination="-1" eventType="touchUpInside" id="30g-OL-nxv"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOg-VS-TnI">
+                    <rect key="frame" x="236" y="476" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="Ix7-8w-RHY"/>
+                        <constraint firstAttribute="height" constant="50" id="u6P-XG-gqD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                    <state key="normal" title="Cancelar"/>
+                    <connections>
+                        <action selector="btCancelar:" destination="-1" eventType="touchUpInside" id="RrU-2v-xnu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3p-z9-nnc">
+                    <rect key="frame" x="248" y="366" width="38" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="38" id="EPV-Ba-1Hq"/>
+                        <constraint firstAttribute="height" constant="34" id="H34-3B-PyH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <state key="normal" title="⤾"/>
+                    <connections>
+                        <action selector="btRotacionarfoto:" destination="-1" eventType="touchUpInside" id="SG5-aR-5xr"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="eLO-JN-AgB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="00h-UK-oKo"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Qgr-Rl-gpe" secondAttribute="bottom" constant="42" id="2HN-A9-xYc"/>
                 <constraint firstItem="eLO-JN-AgB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="2g8-sU-6zG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="g3p-z9-nnc" secondAttribute="trailing" constant="34" id="42j-my-pnX"/>
                 <constraint firstItem="S1h-Nz-Gbm" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="8qR-Oc-hhJ"/>
                 <constraint firstItem="EGr-gL-T48" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="AGN-9x-tBi"/>
+                <constraint firstItem="dAl-3j-0x0" firstAttribute="top" secondItem="eLO-JN-AgB" secondAttribute="bottom" constant="34" id="AXA-z9-w5v"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dAl-3j-0x0" secondAttribute="trailing" constant="34" id="DyW-5o-UJi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kOg-VS-TnI" secondAttribute="trailing" constant="34" id="Fih-ro-xYu"/>
                 <constraint firstItem="EGr-gL-T48" firstAttribute="top" secondItem="eLO-JN-AgB" secondAttribute="bottom" constant="3" id="L37-UY-k7s"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mz8-hq-hHC" secondAttribute="trailing" constant="27" id="N0z-rC-hG9"/>
                 <constraint firstItem="mz8-hq-hHC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="79" id="S95-In-Pdd"/>
@@ -67,7 +107,9 @@
                 <constraint firstItem="mz8-hq-hHC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="34" id="fnW-2r-TO5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="S1h-Nz-Gbm" secondAttribute="trailing" constant="27" id="hgr-lj-UEi"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EGr-gL-T48" secondAttribute="trailing" constant="16" id="ioY-LB-zTf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="kOg-VS-TnI" secondAttribute="bottom" constant="42" id="m5k-Bx-ds3"/>
                 <constraint firstItem="Qgr-Rl-gpe" firstAttribute="top" secondItem="eLO-JN-AgB" secondAttribute="bottom" constant="23" id="zFd-6C-r5T"/>
+                <constraint firstItem="g3p-z9-nnc" firstAttribute="top" secondItem="dAl-3j-0x0" secondAttribute="bottom" constant="13" id="zyI-Vp-Ijq"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="138.75" y="152.11267605633802"/>
