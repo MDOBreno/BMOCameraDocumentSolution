@@ -6,8 +6,6 @@
 //  Copyright © 2018 Breno Medeiros. All rights reserved.
 //
 
-#import <CoreData/CoreData.h>
-#import <RestKit/RestKit.h>
 
 #import "MainViewController.h"
 #import "Loja.h"
@@ -27,55 +25,56 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    NSString *dataUrl = @"https://api.myjson.com/bins/hvcbf";
+    NSURL *url = [NSURL URLWithString:dataUrl];
     
-    
-    //METODO 1 - Rest
-    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Loja class]];
-    [mapping addAttributeMappingsFromDictionary:@{
-        @"id":                      @"id",
-        @"nome":                    @"nome",
-        @"telefone":                @"telefone"
+    NSURLSessionDataTask *requisicao = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ocorreu um erro"
+                                                                message:error.localizedDescription
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"Usar arquivo local: 'lojas.plist'"
+                                                      otherButtonTitles:nil, nil];
+                [alert show];
+                [self loadLojasPlist];
+                return;
+            };
+            [self loadLojasJson:data];
+        });
+        
     }];
-    //TODO: Inserir as 4 linhas abaixo, acima
-    /*@"endereco.complemento":    @"endereco.complemento",
-    @"endereco.bairro":         @"endereco.bairro",
-    @"endereco.numero":         @"endereco.numero",
-    @"endereco.logradouro":     @"endereco.logradouro",*/
-    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodAny pathPattern:nil keyPath:nil statusCodes:nil];
-    //NSURL *url = [NSURL URLWithString:@"https://api.myjson.com/bins/hvcbf"];
-    NSURL *url = [NSURL URLWithString:@"https://sendeyo.com/up/d/4a77a6e4b1"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
-    [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result) {
-        NSLog(@"The public timeline Tweets: %@", [result array]);
-    } failure:nil ];
-    [operation start];
-
-
+    [requisicao resume];
     
-    //METODO 2 - Rest
-    /*RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Article class]];
-    [mapping addAttributeMappingsFromArray:@[@"id", @"nome", @"telefone"]];
-    NSIndexSet *statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful); // Anything in 2xx
-    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodAny pathPattern:@"/articles/:articleID" keyPath:@"article" statusCodes:statusCodes];
-
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://sendeyo.com/up/d/f29a8dd3c9"]];
-    RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
-    [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result) {
-        Article *article = [result firstObject];
-        NSLog(@"Mapped the article: %@", article);
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        NSLog(@"Failed with error: %@", [error localizedDescription]);
-    }];
-    [operation start];*/
-
-
-
-    // Metodo 3 - lojas.plist
-    [self loadLojas];
 }
 
--(void) loadLojas {
+
+-(void) loadLojasJson:(NSData *)data {
+    NSError *jsonErro = nil;
+    NSJSONSerialization *jsonLojas = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonErro];
+    self->lojas =[[NSMutableArray alloc] init];
+    for (NSDictionary *item in [jsonLojas valueForKey:@"lojas"]) {
+        NSString *nome = [item objectForKey:@"nome"];
+        NSString *identidade = [item objectForKey:@"id"];
+        NSString *telefone = [item objectForKey:@"telefone"];
+        UIImage *foto = [UIImage imageNamed:@"Icone Preenchido"];
+
+        NSDictionary *dicioEndereco = [item objectForKey:@"endereco"];
+        NSString *complemento = [dicioEndereco objectForKey:@"complemento"];
+        NSString *bairro = [dicioEndereco objectForKey:@"bairro"];
+        NSString *numero = [dicioEndereco objectForKey:@"numero"];
+        NSString *logradouro = [dicioEndereco objectForKey:@"logradouro"];
+        Endereco *endereco = [[Endereco alloc] initWithComplemento:complemento andBairro:bairro andNumero:numero andLogradouro:logradouro];
+
+        Loja *c = [[Loja alloc] initWithNome:nome  andIdentidade:identidade andTelefone:telefone andEndereco:endereco andFoto:[[UIImageView alloc] initWithImage:foto]];
+        [self->lojas addObject:c];
+    // [c release];
+    }
+    [self.tabelaLojas reloadData];
+}
+
+-(void) loadLojasPlist {
     NSString *plistCaminho = [[NSBundle mainBundle] pathForResource:@"lojas" ofType:@"plist"];
     NSDictionary *pl = [NSDictionary dictionaryWithContentsOfFile:plistCaminho];
     NSArray *dados = [pl objectForKey:@"lojas"];
@@ -98,6 +97,7 @@
         [lojas addObject:c];
         // [c release];
     }
+    [self.tabelaLojas reloadData];
 }
 
 

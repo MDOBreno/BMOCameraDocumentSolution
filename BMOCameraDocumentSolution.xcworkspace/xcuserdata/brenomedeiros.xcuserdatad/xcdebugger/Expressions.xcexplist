@@ -10,5 +10,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "__33-[MainViewController viewDidLoad]_block_invoke_2:MainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[item objectForKey:@&quot;nome&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
