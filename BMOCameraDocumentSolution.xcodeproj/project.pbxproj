@@ -424,7 +424,7 @@
 		33A3571723D69821008FD0C6 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		33A3571823D69821008FD0C6 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		33A3571923D69821008FD0C6 /* libParallelCompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libParallelCompression.tbd; path = usr/lib/libParallelCompression.tbd; sourceTree = SDKROOT; };
-		33C08FDC217EA7C100A73929 /* Breno - Camera DS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Breno - Camera DS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33C08FDC217EA7C100A73929 /* Camera DS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Camera DS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C08FDF217EA7C100A73929 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		33C08FE0217EA7C100A73929 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		33C08FE2217EA7C100A73929 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -906,7 +906,7 @@
 		33C08FDD217EA7C100A73929 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				33C08FDC217EA7C100A73929 /* Breno - Camera DS.app */,
+				33C08FDC217EA7C100A73929 /* Camera DS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -934,7 +934,6 @@
 				8907AB14DF826CF73B760123 /* Pods-BMO05TableViewSimpleContactList.debug.xcconfig */,
 				4A85350DC4FF27E59BD50A28 /* Pods-BMO05TableViewSimpleContactList.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -949,7 +948,6 @@
 				33C08FD8217EA7C100A73929 /* Sources */,
 				33C08FD9217EA7C100A73929 /* Frameworks */,
 				33C08FDA217EA7C100A73929 /* Resources */,
-				D4FDF3760709BBC2AEFA8A40 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -957,7 +955,7 @@
 			);
 			name = BMO05TableViewSimpleContactList;
 			productName = BMO05TableViewSimpleContactList;
-			productReference = 33C08FDC217EA7C100A73929 /* Breno - Camera DS.app */;
+			productReference = 33C08FDC217EA7C100A73929 /* Camera DS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1029,23 +1027,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D4FDF3760709BBC2AEFA8A40 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BMO05TableViewSimpleContactList/Pods-BMO05TableViewSimpleContactList-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BMO05TableViewSimpleContactList/Pods-BMO05TableViewSimpleContactList-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BMO05TableViewSimpleContactList/Pods-BMO05TableViewSimpleContactList-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1220,7 +1201,7 @@
 				MARKETING_VERSION = 1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = CasaDoCodes.BMOCameraDocumentSolution;
-				PRODUCT_NAME = "Breno - Camera DS";
+				PRODUCT_NAME = "Camera DS";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
@@ -1246,7 +1227,7 @@
 				MARKETING_VERSION = 1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = CasaDoCodes.BMOCameraDocumentSolution;
-				PRODUCT_NAME = "Breno - Camera DS";
+				PRODUCT_NAME = "Camera DS";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
