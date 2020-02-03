@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[MainViewController viewDidLoad]:MainViewController.m">
+         contextName = "-[DetalheLoja preencherCamposWith:]:DetalheLoja.m">
          <PersistentStrings>
             <PersistentString
-               value = "[result array]">
+               value = "[loja.foto.image isEqual: [UIImage imageNamed:@&quot;Icone Vazado&quot;]]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -19,10 +19,49 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[DetalheLoja btEditar:]:DetalheLoja.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[df.ivImagem.image isEqual:[UIImage imageNamed:@&quot;Icone Vazado&quot;]]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MainViewController viewDidLoad]:MainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[result array]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DetalheFoto initWithFoto:andIdentidadeLoja:andDetalheLoja:andMainViewController:]:DetalheFoto.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self-&gt;ivImagem.image">
+            </PersistentString>
+            <PersistentString
+               value = "![self-&gt;ivImagem.image isEqual:nil]">
+            </PersistentString>
+            <PersistentString
+               value = "self-&gt;ivImagem.image == nil">
+            </PersistentString>
+            <PersistentString
+               value = "self-&gt;ivImagem">
+            </PersistentString>
+            <PersistentString
+               value = "[self-&gt;ivImagem.image isEqual:[UIImage imageNamed:@&quot;Icone Vazado&quot;]]">
+            </PersistentString>
+            <PersistentString
+               value = "[fotoInicial isEqual:[UIImage imageNamed:@&quot;Icone Vazado&quot;]]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[MainViewController tableView:cellForRowAtIndexPath:]:MainViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "[loja.foto.image isEqual:[UIImage imageNamed:@&quot;Icone Preenchido&quot;]]">
+               value = "[loja.foto.image isEqual:[UIImage imageNamed:@&quot;Icone Vazado&quot;]]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

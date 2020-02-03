@@ -54,15 +54,9 @@ DetalheFoto *df;
     self.tvEndereco.layer.borderColor = [[UIColor grayColor] CGColor];
     self.tvEndereco.layer.cornerRadius = 5;
     
-    df = [[DetalheFoto alloc] initWithFoto:loja.foto andIdentidadeLoja:loja.identidade andDetalheLoja:self andMainViewController:mainViewController];
+    df = [[DetalheFoto alloc] initWithFoto:loja.foto.image andIdentidadeLoja:loja.identidade andDetalheLoja:self andMainViewController:mainViewController];
     
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    for (Loja *lojaAtual in appDelegate->lojas) {
-        if ([lojaAtual.identidade isEqual:loja.identidade]) {
-            self.ivFoto.image = lojaAtual.foto.image;
-            break;
-        }
-    }
+    self.ivFoto.image = loja.foto.image;
 }
 
 
@@ -71,8 +65,6 @@ DetalheFoto *df;
 }
 
 - (IBAction)btEditar:(id)sender {
-    df = [[DetalheFoto alloc] initWithFoto:loja.foto andIdentidadeLoja:loja.identidade andDetalheLoja:self andMainViewController:mainViewController];
-    
     df.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     
     [self presentModalViewController:df animated:YES];

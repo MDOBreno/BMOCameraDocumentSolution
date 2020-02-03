@@ -34,10 +34,13 @@ bool *rotacionado;
 
 - (id)initWithFoto:(UIImage *)fotoInicial andIdentidadeLoja:(NSString *)identidadeInicial andDetalheLoja:(DetalheLoja *)detalheLojaInicial andMainViewController:(MainViewController *)mainViewControllerInicial{
     if(( self = [super init] )) {
-        self->foto = fotoInicial;
         self->identidadeLoja = identidadeInicial;
         self->detalheLoja = detalheLojaInicial;
         self->mainViewController = mainViewControllerInicial;
+        self->ivImagem.image = fotoInicial;
+        if (self->ivImagem.image == nil) {
+            self->ivImagem.image =  [UIImage imageNamed:@"Icone Vazado"];
+        }
     }
 
     return self;

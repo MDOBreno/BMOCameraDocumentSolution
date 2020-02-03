@@ -11,7 +11,6 @@
 
 
 @interface DetalheFoto : UIViewController{
-    UIImage *foto;
     DetalheLoja *detalheLoja;
     MainViewController *mainViewController;
     NSString *identidadeLoja;
@@ -20,7 +19,7 @@
     @public IBOutlet UIImageView *ivImagem;
 }
 
--(id) initWithFoto:(UIImageView *) fotoInicial andIdentidadeLoja:(NSString *)identidadeInicial andDetalheLoja:(DetalheLoja *)detalheLojaInicial andMainViewController:(MainViewController *)mainViewControllerInicial;
+-(id) initWithFoto:(UIImage *) fotoInicial andIdentidadeLoja:(NSString *)identidadeInicial andDetalheLoja:(DetalheLoja *)detalheLojaInicial andMainViewController:(MainViewController *)mainViewControllerInicial;
 
 
 - (IBAction)btBaterFoto:(id)sender;
