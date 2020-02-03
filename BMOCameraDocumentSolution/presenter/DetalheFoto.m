@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "AppDelegate.h"
+#import "DetalheLoja.h"
 #import "DetalheFoto.h"
+#import "Loja.h"
 
 @interface DetalheFoto ()
 
@@ -29,9 +32,12 @@ bool *rotacionado;
     quadroParaCaptura.layer.zPosition = 5;
 }
 
-- (id)initWithFoto:(UIImage *)fotoInicial {
+- (id)initWithFoto:(UIImage *)fotoInicial andIdentidadeLoja:(NSString *)identidadeInicial andDetalheLoja:(DetalheLoja *)detalheLojaInicial andMainViewController:(MainViewController *)mainViewControllerInicial{
     if(( self = [super init] )) {
         self->foto = fotoInicial;
+        self->identidadeLoja = identidadeInicial;
+        self->detalheLoja = detalheLojaInicial;
+        self->mainViewController = mainViewControllerInicial;
     }
 
     return self;
@@ -88,8 +94,17 @@ bool *rotacionado;
 }
 
 - (IBAction)btSalvarFoto:(id)sender {
-    //super.loja.foto.image = ivImagem.image;
+    detalheLoja.ivFoto.image = ivImagem.image;
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    for (Loja *lojaAtual in appDelegate->lojas) {
+        if ([lojaAtual.identidade isEqual:identidadeLoja]) {
+            lojaAtual.foto.image = ivImagem.image;
+            break;
+        }
+    }
     [self dismissModalViewControllerAnimated:YES];
+    [mainViewController.tabelaLojas reloadData];
 }
 
 - (IBAction)btRotacionarfoto:(id)sender {

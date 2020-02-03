@@ -12,12 +12,15 @@
 
 @interface DetalheFoto : UIViewController{
     UIImage *foto;
+    DetalheLoja *detalheLoja;
+    MainViewController *mainViewController;
+    NSString *identidadeLoja;
     __weak IBOutlet UIImageView *ivCameraInsta;
     IBOutlet UIView *quadroParaCaptura;
     @public IBOutlet UIImageView *ivImagem;
 }
 
--(id) initWithFoto:(UIImageView *) fotoInicial;
+-(id) initWithFoto:(UIImageView *) fotoInicial andIdentidadeLoja:(NSString *)identidadeInicial andDetalheLoja:(DetalheLoja *)detalheLojaInicial andMainViewController:(MainViewController *)mainViewControllerInicial;
 
 
 - (IBAction)btBaterFoto:(id)sender;

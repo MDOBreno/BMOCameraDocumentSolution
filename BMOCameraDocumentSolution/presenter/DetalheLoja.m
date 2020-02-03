@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
+#import "AppDelegate.h"
 
 #import "DetalheLoja.h"
 #import "DetalheFoto.h"
 
 @interface DetalheLoja ()
-
 
 @end
 
@@ -29,10 +29,11 @@ DetalheFoto *df;
 }
 
 
-- (id)initWithLoja:(Loja *)lojaInicial {
+- (id)initWithLoja:(Loja *)lojaInicial andMainViewController:(MainViewController *)mainViewControllerInicial{
     
     if(( self = [super init] )) {
         [self preencherCamposWith:lojaInicial];
+        self->mainViewController = mainViewControllerInicial;
     }
     
     return self;
@@ -53,8 +54,15 @@ DetalheFoto *df;
     self.tvEndereco.layer.borderColor = [[UIColor grayColor] CGColor];
     self.tvEndereco.layer.cornerRadius = 5;
     
-    df = [[DetalheFoto alloc] initWithFoto:loja.foto];
-    self.ivFoto.image = loja.foto.image;
+    df = [[DetalheFoto alloc] initWithFoto:loja.foto andIdentidadeLoja:loja.identidade andDetalheLoja:self andMainViewController:mainViewController];
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    for (Loja *lojaAtual in appDelegate->lojas) {
+        if ([lojaAtual.identidade isEqual:loja.identidade]) {
+            self.ivFoto.image = lojaAtual.foto.image;
+            break;
+        }
+    }
 }
 
 
@@ -63,7 +71,7 @@ DetalheFoto *df;
 }
 
 - (IBAction)btEditar:(id)sender {
-    df = [[DetalheFoto alloc] initWithFoto:loja.foto];
+    df = [[DetalheFoto alloc] initWithFoto:loja.foto andIdentidadeLoja:loja.identidade andDetalheLoja:self andMainViewController:mainViewController];
     
     df.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     

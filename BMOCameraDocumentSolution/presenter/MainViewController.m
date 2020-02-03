@@ -11,6 +11,7 @@
 #import "Loja.h"
 #import "Endereco.h"
 #import "DetalheLoja.h"
+#import "AppDelegate.h"
 
 @interface MainViewController ()
 
@@ -50,12 +51,13 @@
 -(void) loadLojasJson:(NSData *)data {
     NSError *jsonErro = nil;
     NSJSONSerialization *jsonLojas = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonErro];
-    self->lojas =[[NSMutableArray alloc] init];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate->lojas =[[NSMutableArray alloc] init];
     for (NSDictionary *item in [jsonLojas valueForKey:@"lojas"]) {
         NSString *nome = [item objectForKey:@"nome"];
         NSString *identidade = [item objectForKey:@"id"];
         NSString *telefone = [item objectForKey:@"telefone"];
-        UIImage *foto = [UIImage imageNamed:@"Icone Preenchido"];
+        UIImage *foto = [UIImage imageNamed:@"Icone Vazado"];
 
         NSDictionary *dicioEndereco = [item objectForKey:@"endereco"];
         NSString *complemento = [dicioEndereco objectForKey:@"complemento"];
@@ -65,7 +67,7 @@
         Endereco *endereco = [[Endereco alloc] initWithComplemento:complemento andBairro:bairro andNumero:numero andLogradouro:logradouro];
 
         Loja *c = [[Loja alloc] initWithNome:nome  andIdentidade:identidade andTelefone:telefone andEndereco:endereco andFoto:[[UIImageView alloc] initWithImage:foto]];
-        [self->lojas addObject:c];
+        [appDelegate->lojas addObject:c];
     // [c release];
     }
     [self.tabelaLojas reloadData];
@@ -76,12 +78,13 @@
     NSDictionary *pl = [NSDictionary dictionaryWithContentsOfFile:plistCaminho];
     NSArray *dados = [pl objectForKey:@"lojas"];
     
-    lojas =[[NSMutableArray alloc] init];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate->lojas =[[NSMutableArray alloc] init];
     for (NSDictionary *item in dados) {
         NSString *nome = [item objectForKey:@"nome"];
         NSString *identidade = [item objectForKey:@"identidade"];
         NSString *telefone = [item objectForKey:@"telefone"];
-        UIImage *foto = [UIImage imageNamed:@"Icone Preenchido"];
+        UIImage *foto = [UIImage imageNamed:@"Icone Vazado"];
         
         NSDictionary *dicioEndereco = [item objectForKey:@"endereco"];
         NSString *complemento = [dicioEndereco objectForKey:@"complemento"];
@@ -91,7 +94,7 @@
         Endereco *endereco = [[Endereco alloc] initWithComplemento:complemento andBairro:bairro andNumero:numero andLogradouro:logradouro];
         
         Loja *c = [[Loja alloc] initWithNome:nome  andIdentidade:identidade andTelefone:telefone andEndereco:endereco andFoto:[[UIImageView alloc] initWithImage:foto]];
-        [lojas addObject:c];
+        [appDelegate->lojas addObject:c];
         // [c release];
     }
     [self.tabelaLojas reloadData];
@@ -100,7 +103,8 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return lojas.count;
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    return appDelegate->lojas.count;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -110,21 +114,20 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CelulaLojaCacheID];
     }
-    
-    Loja *loja = [lojas objectAtIndex:indexPath.row];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    Loja *loja = [appDelegate->lojas objectAtIndex:indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"Loja com iD: %@", loja.identidade];
     cell.detailTextLabel.text = loja.nome;
-    
-    UIImage *icone = [UIImage imageNamed:@"Icone Preenchido"];
-    cell.imageView.image = icone;
-    cell.imageView.layer.cornerRadius = icone.size.height / 4;
-    cell.imageView.layer.masksToBounds = YES;
+
+    cell.imageView.image = loja.foto.image;
+    cell.imageView.layer.cornerRadius = loja.foto.image.size.height / 4;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Loja *loja = [lojas objectAtIndex:indexPath.row];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    Loja *loja = [appDelegate->lojas objectAtIndex:indexPath.row];
     
     [self showDetalheLoja:loja];
     /*NSString *msg = [NSString stringWithFormat:@"Nome: %@\nTelefone: %@", loja.nome, loja.telefone];
@@ -138,7 +141,8 @@
 -(void)tableView:(UITableView*)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath*)indexPath{
     
     if (editingStyle == (NSInteger *)UITableViewCellEditingStyleDelete) {
-        [lojas removeObjectAtIndex:indexPath.row];
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [appDelegate->lojas removeObjectAtIndex:indexPath.row];
         [self.tabelaLojas reloadData];
     }
 }
@@ -149,7 +153,7 @@
 
 
 -(void) showDetalheLoja:(Loja*)loja {
-    DetalheLoja *dl = [[DetalheLoja alloc] initWithLoja:loja];
+    DetalheLoja *dl = [[DetalheLoja alloc] initWithLoja:loja andMainViewController:self];
     
     dl.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     

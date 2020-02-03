@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Loja.h"
+#import "MainViewController.h"
 
 
 @interface DetalheLoja : UIViewController{
@@ -16,14 +17,17 @@
     @public UITextView *tvEndereco;
     @public UIImageView *ivFoto;
     @public Loja *loja;
+    @public MainViewController *mainViewController;
 }
 
--(id) initWithLoja:(Loja *) lojaInicial;
+-(id) initWithLoja:(Loja *) lojaInicial
+andMainViewController:(MainViewController *)mainViewControllerInicial;
 
 @property (weak, nonatomic) IBOutlet UITextField *tfNome;
 @property (weak, nonatomic) IBOutlet UITextField *tfTelefone;
 @property (weak, nonatomic) IBOutlet UITextView *tvEndereco;
 @property (weak, nonatomic) IBOutlet UIImageView *ivFoto;
+
 
 
 - (IBAction)btEditar:(id)sender;
