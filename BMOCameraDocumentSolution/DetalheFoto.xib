@@ -50,7 +50,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAl-3j-0x0">
-                    <rect key="frame" x="248" y="315" width="38" height="38"/>
+                    <rect key="frame" x="248" y="356" width="38" height="38"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="38" id="OA5-mP-OQz"/>
                         <constraint firstAttribute="height" constant="38" id="dwb-4B-tdP"/>
@@ -62,7 +62,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOg-VS-TnI">
-                    <rect key="frame" x="236" y="476" width="50" height="50"/>
+                    <rect key="frame" x="240" y="458" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="Ix7-8w-RHY"/>
                         <constraint firstAttribute="height" constant="50" id="u6P-XG-gqD"/>
@@ -74,7 +74,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3p-z9-nnc">
-                    <rect key="frame" x="248" y="366" width="38" height="34"/>
+                    <rect key="frame" x="248" y="399" width="38" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="38" id="EPV-Ba-1Hq"/>
                         <constraint firstAttribute="height" constant="34" id="H34-3B-PyH"/>
@@ -94,22 +94,22 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="g3p-z9-nnc" secondAttribute="trailing" constant="34" id="42j-my-pnX"/>
                 <constraint firstItem="S1h-Nz-Gbm" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="8qR-Oc-hhJ"/>
                 <constraint firstItem="EGr-gL-T48" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="AGN-9x-tBi"/>
-                <constraint firstItem="dAl-3j-0x0" firstAttribute="top" secondItem="eLO-JN-AgB" secondAttribute="bottom" constant="34" id="AXA-z9-w5v"/>
+                <constraint firstItem="dAl-3j-0x0" firstAttribute="top" secondItem="eLO-JN-AgB" secondAttribute="bottom" constant="75" id="AXA-z9-w5v"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dAl-3j-0x0" secondAttribute="trailing" constant="34" id="DyW-5o-UJi"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kOg-VS-TnI" secondAttribute="trailing" constant="34" id="Fih-ro-xYu"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kOg-VS-TnI" secondAttribute="trailing" constant="30" id="Fih-ro-xYu"/>
                 <constraint firstItem="EGr-gL-T48" firstAttribute="top" secondItem="eLO-JN-AgB" secondAttribute="bottom" constant="3" id="L37-UY-k7s"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mz8-hq-hHC" secondAttribute="trailing" constant="27" id="N0z-rC-hG9"/>
                 <constraint firstItem="mz8-hq-hHC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="79" id="S95-In-Pdd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Qgr-Rl-gpe" secondAttribute="trailing" constant="90" id="TWc-bz-0IO"/>
+                <constraint firstItem="kOg-VS-TnI" firstAttribute="top" secondItem="g3p-z9-nnc" secondAttribute="bottom" constant="25" id="X41-U0-rq2"/>
                 <constraint firstItem="Qgr-Rl-gpe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="dCX-NU-hfr"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="EGr-gL-T48" secondAttribute="bottom" constant="20" id="e4z-Ac-wKn"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eLO-JN-AgB" secondAttribute="trailing" constant="16" id="eGl-dl-0EV"/>
                 <constraint firstItem="mz8-hq-hHC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="34" id="fnW-2r-TO5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="S1h-Nz-Gbm" secondAttribute="trailing" constant="27" id="hgr-lj-UEi"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EGr-gL-T48" secondAttribute="trailing" constant="16" id="ioY-LB-zTf"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="kOg-VS-TnI" secondAttribute="bottom" constant="42" id="m5k-Bx-ds3"/>
                 <constraint firstItem="Qgr-Rl-gpe" firstAttribute="top" secondItem="eLO-JN-AgB" secondAttribute="bottom" constant="23" id="zFd-6C-r5T"/>
-                <constraint firstItem="g3p-z9-nnc" firstAttribute="top" secondItem="dAl-3j-0x0" secondAttribute="bottom" constant="13" id="zyI-Vp-Ijq"/>
+                <constraint firstItem="g3p-z9-nnc" firstAttribute="top" secondItem="dAl-3j-0x0" secondAttribute="bottom" constant="5" id="zyI-Vp-Ijq"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="138.75" y="152.11267605633802"/>

@@ -13,10 +13,7 @@
 #import "DetalheLoja.h"
 
 @interface MainViewController ()
-//TODO: Deletar as 3 linhas abaixo
-@property (nonatomic, copy) NSNumber *userID;
-@property (nonatomic, copy) NSString *username;
-@property (nonatomic, copy) NSString *text;
+
 @end
 
 @implementation MainViewController

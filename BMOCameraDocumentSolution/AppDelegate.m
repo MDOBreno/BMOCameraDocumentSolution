@@ -8,9 +8,6 @@
 
 #import "AppDelegate.h"
 
-//TODO: Deletar as 2 linhas abaixo
-//#import <CoreData/CoreData.h>
-//#import <RestKit/RestKit.h>
 
 @interface AppDelegate ()
 
