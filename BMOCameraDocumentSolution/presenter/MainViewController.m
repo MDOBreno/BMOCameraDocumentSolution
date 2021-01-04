@@ -23,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSString *dataUrl = @"https://api.myjson.com/bins/hvcbf";
+    NSString *dataUrl = @"https://raw.githubusercontent.com/MDOBreno/BMOCameraDocumentSolution/master/jsonRequest.json";
     NSURL *url = [NSURL URLWithString:dataUrl];
     
     NSURLSessionDataTask *requisicao = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
