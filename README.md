@@ -1,0 +1,3 @@
+# BMOCameraDocumentSolution
+
+Teste Document Solutions:  Projeto que construí uma aplicação para visualizar suas informações de lojas.   Para isso:   1) O app deve consumir o serviço https://api.myjson.com/bins/hvcbf como uma REST API, para obter as informações das lojas.    2) Deve Exibir essas Lojas em uma lista   3) Os itens da lista devem ser clicáveis e, ao serem clicados, devem levar á uma segunda View, onde serão mostrados mais detalhes da loja  4) A segunda View, Tambem deve conter um espaço para mostrar o preview de uma imagem (ImageView) que deverá ser capturada ou buscada da galeria.    5) Caso escolha a camera, ela deve ser construída(em vez do uso da nativa), e a imagem deve ser salva no dispositivo   6) Utilizar Objective-C como linguagem principal.
